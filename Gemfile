@@ -27,6 +27,8 @@ gem 'autoprefixer-rails', '~> 7.1.5'
 gem 'jquery-rails', '~> 4.3.1'
 # Better form builder
 gem 'simple_form', '~> 3.5.0'
+# Authentication solution
+gem 'devise', '~> 4.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
