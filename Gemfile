@@ -20,6 +20,13 @@ gem 'therubyracer', platforms: :ruby
 gem 'mongoid', '~> 6.1.0'
 # HTML Templating
 gem 'haml', '~> 5.0.3'
+# Front end framework - Design and Grid
+gem 'bootstrap', '~> 4.0.0.beta'
+gem 'autoprefixer-rails', '~> 7.1.5'
+# Jquery for rails
+gem 'jquery-rails', '~> 4.3.1'
+# Better form builder
+gem 'simple_form', '~> 3.5.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
