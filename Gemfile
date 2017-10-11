@@ -18,6 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
 # Database
 gem 'mongoid', '~> 6.1.0'
+# HTML Templating
+gem 'haml', '~> 5.0.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -32,6 +34,8 @@ group :development, :test do
 end
 
 group :development do
+  # only in dev, because haml-rails adds the generators
+  gem "haml-rails", "~> 1.0"
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
