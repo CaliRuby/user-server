@@ -29,6 +29,8 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'simple_form', '~> 3.5.0'
 # Authentication solution
 gem 'devise', '~> 4.3.0'
+# better log visualization
+gem 'shog', '~> 0.1.9'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
