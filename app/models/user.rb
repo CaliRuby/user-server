@@ -35,4 +35,21 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+
+  has_one :profile, class_name: 'Users::Profile'
+
+  accepts_nested_attributes_for :profile
+
+  after_create :build_profile
+
+  protected
+
+  #
+  # creates a base profile model
+  #
+  # @return [Type]
+  #
+  def build_profile
+    create_profile
+  end
 end

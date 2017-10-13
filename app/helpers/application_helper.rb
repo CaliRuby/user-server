@@ -29,8 +29,8 @@ module ApplicationHelper
   #
   def navbar_items
     [
-      ['Home', 'home', '#', :get],
-      ['Profile', 'male', '#', :get],
+      ['Home', 'home', workspace_path, :get],
+      ['Profile', 'male', users_profiles_path, :get],
       ['Log Out', 'hand-spock-o', destroy_user_session_path, :delete]
     ]
   end

@@ -1,0 +1,26 @@
+.users-profiles.index-page
+  %h1 Hello!
+  .row
+    .col-md-3.col-sm-4
+      .card
+        .card-body
+          .avatar-container
+            = image_tag photo_url(current_user)
+    .col-md-9.col-sm-8.flex-column
+      .card.flex-card
+        .card-body
+          .float-right
+            = link_to 'Edit Information', edit_users_profiles_path, class: 'btn btn-warning btn-sm'
+          %h2= current_user.profile.full_name.presence || 'Welcome!'
+          %br
+          %h5
+            .fa.fa-envelope
+            = current_user.email
+          %br
+          %h5
+            .fa.fa-phone
+            = current_user.profile.phone.presence || 'N/A'
+          %br
+          %h5
+            .fa.fa-street-view
+            = current_user.profile.address.presence || 'N/A'

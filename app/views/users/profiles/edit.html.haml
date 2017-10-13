@@ -1,0 +1,24 @@
+.users-profiles.edit-page
+  .container-fluid
+    %h1 Editing Your Profile
+    .card
+      .card-body
+        %h3.uppercased-font= t('.basic_information')
+        = simple_form_for @user, as: :user, url: users_profiles_path do |f|
+          = f.simple_fields_for :profile do |g|
+            .form-inputs
+              %br
+              = f.error_notification
+              .row
+                .col-sm-6
+                  = g.input :first_name, label: 'First Name', placeholder: 'enter your first name', required: false
+                .col-sm-6
+                  = g.input :last_name, label: 'Last Name', placeholder: 'enter your last name', required: false
+                .col-sm-6
+                  = g.input :phone, label: 'Phone', placeholder: 'enter your phone', required: false
+                .col-sm-6
+                  = g.input :address, label: 'Address', placeholder: 'enter your address', required: false
+            .form-actions
+              %br
+              .pull-right
+                = f.button :submit, 'Edit Profile', class: 'btn btn-info'
