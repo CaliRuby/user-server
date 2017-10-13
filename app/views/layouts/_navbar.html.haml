@@ -6,9 +6,9 @@
     %span.navbar-toggler-icon
   #navbarText.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      - navbar_items.each do |name, style_class, path|
+      - navbar_items.each do |name, style_class, path, method|
         %li.nav-item{ class: "#{ 'active' if active_nav_item == name }" }
-          = link_to path, class: 'nav-link' do
+          = link_to path, method: method, class: 'nav-link' do
             .fa{ class: "fa fa-#{style_class}" }
             = name
     %span.navbar-text

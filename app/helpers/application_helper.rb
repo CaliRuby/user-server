@@ -29,9 +29,9 @@ module ApplicationHelper
   #
   def navbar_items
     [
-      ['Home', 'home', '#'],
-      ['Profile', 'user', '#'],
-      ['Sign Out', 'user-times', '#']
+      ['Home', 'home', '#', :get],
+      ['Profile', 'user', '#', :get],
+      ['Log Out', 'user-times', destroy_user_session_path, :delete]
     ]
   end
 
