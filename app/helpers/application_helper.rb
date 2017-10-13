@@ -1,4 +1,10 @@
 module ApplicationHelper
+  # this maps controller with its associated nav item in navbar
+  NAV_MAPPING = {
+    'profiles' => 'Profile',
+    'workspace' => 'Home'
+  }
+
   # Devise anywhere session stuff
   def resource_name
     :user
@@ -42,6 +48,6 @@ module ApplicationHelper
   # @return [ Array ]
   #
   def active_nav_item
-    content_for(:active_nav_item) || 'Home'
+    content_for(:active_nav_item) || NAV_MAPPING[controller_name] || 'Home'
   end
 end
