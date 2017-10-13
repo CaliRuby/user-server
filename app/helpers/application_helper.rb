@@ -30,8 +30,8 @@ module ApplicationHelper
   def navbar_items
     [
       ['Home', 'home', '#', :get],
-      ['Profile', 'user', '#', :get],
-      ['Log Out', 'user-times', destroy_user_session_path, :delete]
+      ['Profile', 'male', '#', :get],
+      ['Log Out', 'hand-spock-o', destroy_user_session_path, :delete]
     ]
   end
 
