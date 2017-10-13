@@ -23,6 +23,7 @@ gem 'haml', '~> 5.0.3'
 # Front end framework - Design and Grid
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'autoprefixer-rails', '~> 7.1.5'
+gem "font-awesome-rails", '~> 4.7.0'
 # Jquery for rails
 gem 'jquery-rails', '~> 4.3.1'
 # Better form builder

@@ -21,4 +21,27 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  #
+  # Returns all items who belong to navbar rendering
+  #
+  # @return [ Array ]
+  #
+  def navbar_items
+    [
+      ['Home', 'home', '#'],
+      ['Profile', 'user', '#'],
+      ['Sign Out', 'user-times', '#']
+    ]
+  end
+
+  #
+  # Evaluates if active_nav_item exists, if not, it returns a default value, it
+  # is necessary for making a nav item active on main navbar
+  #
+  # @return [ Array ]
+  #
+  def active_nav_item
+    content_for(:active_nav_item) || 'Home'
+  end
 end

@@ -1,0 +1,15 @@
+%nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+  %a.navbar-brand{ href: workspace_path }
+    = image_tag 'brand.png', height: 30, width: 30, alt: ''
+    Cali Ruby
+  %button.navbar-toggler{"aria-controls" => "navbarText", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarText", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarText.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      - navbar_items.each do |name, style_class, path|
+        %li.nav-item{ class: "#{ 'active' if active_nav_item == name }" }
+          = link_to path, class: 'nav-link' do
+            .fa{ class: "fa fa-#{style_class}" }
+            = name
+    %span.navbar-text
+      = "hello #{current_user.email}"
