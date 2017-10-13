@@ -1,24 +1,35 @@
-# README
+# User Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A demo rails app as a simple authentication web app based on Devise and MongoDB, this application will be used for learning purposes, also it makes part of **Dockerizing the Gem**, a meetup held in Cali on November 4, 2017
 
-Things you may want to cover:
+# Essential Dependencies
 
-* Ruby version
+- Ruby 2.4.2
+- Rails 5.1.4
+- bootstrap 4.alpha
+- MongoDB 3.4
+- Mongoid 6.1.0
 
-* System dependencies
+# Configuration
 
-* Configuration
+copy all example files (config files) to real ones
 
-* Database creation
+```
+cp config/mongoid.yml.example config/mongoid.yml
+```
 
-* Database initialization
+install all dependencies
 
-* How to run the test suite
+```
+bundle install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the server
 
-* Deployment instructions
+```
+rails server
+```
 
-* ...
+Server will run on `localhost:3000`
+
+Enjoy it!
