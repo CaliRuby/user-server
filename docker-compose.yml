@@ -1,0 +1,33 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+      args:
+        - SECRET_KEY_BASE=c737b423f6e49bd9134c9c6fa34e0954e58a1e4077f836fa9a5729b93eed6bfdfe0c5aa030ae004bfef1427f5299391224f3a744a04a53b3f04424680cd9fdd0
+        - RAILS_ENV=production
+        - RACK_ENV=production
+    command: puma -C config/puma.rb
+    volumes:
+      - /var/www/user-server-app
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/user_server
+  mongo:
+    image: mongo:3.4
+    ports:
+      - "27017:27017"
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    links:
+      - app
+    volumes:
+      - /var/www/user-server-app
+    ports:
+      - "80:80"

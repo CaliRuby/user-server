@@ -1,0 +1,47 @@
+FROM ruby:2.4.2
+MAINTAINER johan.tique@analisistem.com
+
+ARG APP_DIR=/var/www/user-server-app
+ARG RAILS_ENV
+ARG RACK_ENV
+ARG SECRET_KEY_BASE
+
+ENV RAILS_ENV "$RAILS_ENV"
+ENV RACK_ENV "$RACK_ENV"
+ENV SECRET_KEY_BASE "$SECRET_KEY_BASE"
+
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev libreadline-dev nodejs
+
+# Setup app directory.
+RUN mkdir -p $APP_DIR
+
+WORKDIR $APP_DIR
+
+# Copy the Gemfile as well as the Gemfile.lock and install
+# the RubyGems. This is a separate step so the dependencies
+# will be cached unless changes to one of those two files
+# are made.
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler && bundle install --jobs 4 --retry 5 --without development test doc
+
+# Copy the main application.
+COPY . ./
+
+# Copy secrets and DB config files
+COPY config/mongoid.yml.example ./config/mongoid.yml
+COPY config/secrets.yml.example ./config/secrets.yml
+
+RUN bundle exec rails assets:precompile
+
+# Expose port 3000 to the Docker host, so we can access it
+# from the outside.
+EXPOSE 3000
+
+# Configure an entry point, so we don't need to specify
+# "bundle exec" for each of our commands.
+ENTRYPOINT ["bundle", "exec"]
+
+# The main command to run when the container starts. Also
+# tell the Rails dev server to bind to all interfaces by
+# default.
+CMD ["puma", "-C", "config/puma.rb"]
