@@ -18,6 +18,10 @@ copy all example files (config files) to real ones
 cp config/mongoid.yml.example config/mongoid.yml
 ```
 
+```
+cp config/secrets.yml.example config/secrets.yml
+```
+
 install all dependencies
 
 ```
@@ -65,7 +69,7 @@ docker run -itP -v $(pwd):/app user_server
 
 ### Docker compose
 
-you also can use docker compose for build and running the containers on production environment, we have a dockerfile set specifically designed for production, those files are
+you also can use docker compose for building and running the containers on a production-like environment, we have a dockerfile set specifically designed for production, those files are
 
 - Dockerfile-app
 - Dockerfile-nginx
