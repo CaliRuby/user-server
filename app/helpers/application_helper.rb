@@ -2,7 +2,8 @@ module ApplicationHelper
   # this maps controller with its associated nav item in navbar
   NAV_MAPPING = {
     'profiles' => 'Profile',
-    'workspace' => 'Home'
+    'workspace' => 'Home',
+    'documents' => 'Documents',
   }
 
   # Devise anywhere session stuff
@@ -37,6 +38,7 @@ module ApplicationHelper
     [
       ['Home', 'home', workspace_path, :get],
       ['Profile', 'male', users_profiles_path, :get],
+      ['Documents', 'file-code-o', new_document_path, :get],
       ['Log Out', 'hand-spock-o', destroy_user_session_path, :delete]
     ]
   end
