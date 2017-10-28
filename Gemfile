@@ -43,7 +43,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker', '~> 1.8.4'
 # PDF rendering
 gem 'prawn', '~> 2.2.0'
-gem 'prawnto_2', require: 'prawnto'
+gem 'prawnto_2', require: 'prawnto', github: 'analisistem/prawnto'
 # PORO with steroids
 gem 'active_attr', '~> 0.10.2'
 
