@@ -24,6 +24,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_attr (0.10.2)
+      activemodel (>= 3.0.2, < 5.2)
+      activesupport (>= 3.0.2, < 5.2)
     activejob (5.1.4)
       activesupport (= 5.1.4)
       globalid (>= 0.3.6)
@@ -255,6 +258,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_attr (~> 0.10.2)
   autoprefixer-rails (~> 7.1.5)
   bootstrap (~> 4.0.0.beta)
   byebug

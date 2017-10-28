@@ -4,4 +4,10 @@
     .card
       .card-body
         %h3.uppercased-font= t('.write_your_content')
-        
+        = simple_form_for @document, as: :document, url: documents_path do |f|
+          .form-inputs
+            %br
+            = f.error_notification
+            .row
+              .col-12
+                = f.input :body, as: :text, label: 'Document Body'

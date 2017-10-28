@@ -44,6 +44,8 @@ gem 'faker', '~> 1.8.4'
 # PDF rendering
 gem 'prawn', '~> 2.2.0'
 gem 'prawnto_2', require: 'prawnto'
+# PORO with steroids
+gem 'active_attr', '~> 0.10.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
