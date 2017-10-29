@@ -6,7 +6,7 @@ end
 
 partial! 'documents/header'
 
-grid([3.2, 0.1], [38,10.9]).bounding_box do
+grid([3.4, 0.2], [38,10.8]).bounding_box do
   partial! 'documents/body'
 end
 

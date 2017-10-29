@@ -3,13 +3,14 @@
     %h1 PDF rendering
     .card
       .card-body
-        %h3.uppercased-font= t('.write_your_content')
+        %h3.uppercased-font Write your content
+        .alert.alert-primary
+          Here, you can use basic markdown as: ordered list, non-ordered list, paragraph, images and links
         = simple_form_for @document, as: :document, url: documents_path(format: :pdf), html: { target: '_blank' } do |f|
           .form-inputs
-            %br
             = f.error_notification
             .row
               .col-12
-                = f.input :body, as: :text, label: 'Document Body'
+                = f.input :body, as: :text, label: false, input_html: { rows: 20 }
           .form-actions
             = f.button :submit, 'Render', data: { disable_with: false }
