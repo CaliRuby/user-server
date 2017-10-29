@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
   app:
     build:
@@ -10,10 +10,10 @@ services:
         - RACK_ENV=production
     command: puma -C config/puma.rb
     volumes:
-      - /var/www/user-server-app
+      - assets:/var/www/user-server-app
     ports:
       - "3000:3000"
-    links:
+    depends_on:
       - mongo
     environment:
       - MONGO_URL=mongodb://mongo:27017/user_server
@@ -25,9 +25,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-nginx
-    links:
+    volumes_from:
       - app
-    volumes:
-      - /var/www/user-server-app
+    depends_on:
+      - app
     ports:
       - "80:80"
+volumes:
+  assets:
+    external: false
