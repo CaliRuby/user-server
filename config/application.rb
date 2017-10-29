@@ -31,6 +31,7 @@ module UserServer
 
     # Auto-loading lib files
     config.autoload_paths << Rails.root.join('lib')
+    config.eager_load_paths << "#{Rails.root}/lib"
 
     # In order to avoid that each controller loads all existent helper, this could be a problem
     # when you try to segment your helper methods
