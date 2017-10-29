@@ -1,6 +1,7 @@
 # User Server
 
-A demo rails app as a simple authentication web app based on Devise and MongoDB, this application will be used for learning purposes, also it makes part of **Dockerizing the Gem**, a meetup held in Cali on November 4, 2017
+A demo rails app as a simple app that authenticates users and renders PDFs using Prawn and Markdown, the 
+authentication web app is based on Devise and MongoDB, this application will be used for learning purposes, also it makes part of **Dockerizing the Gem**, a meetup held in Cali on November 4, 2017
 
 # Essential Dependencies
 
