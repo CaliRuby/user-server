@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # @param [ Devise::Resource ] resource
   #
   def after_sign_in_path_for(resource)
-    request.referrer && request.referrer != root_url ? request.referrer : '/workspace'
+    '/workspace'
   end
 
   #
