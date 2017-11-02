@@ -200,7 +200,6 @@ module Prawn::Extensions::Markdown::Parser
           _index = @links_list[:urls_seen].index(paragraph.content[-1].scan(/\((.*?)\)/).flatten.first) || 'N/A'
           paragraph.content[-1] = paragraph.content[-1].gsub(val[0], "#{_title} {#{_index}}")
         end
-
       end
       if !list.content.empty? && ! @document_structure.include?(list)
         @document_structure << list
